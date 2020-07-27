@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">GithubAPI Dicoding</string>
+    <string name="name">Name</string>
+    <string name="username">Username</string>
+    <string name="company">Company</string>
+    <string name="location">Location</string>
+    <string name="repository">Repository</string>
+    <string name="follower">Followers</string>
+    <string name="following">Following</string>
+    <string name="insert_user">Search User Here…</string>
+    <string name="search">Search</string>
+    <string name="menu_1">menu_1</string>
+    <string name="menu_2">menu_2</string>
+    <string name="search_hint">Search user here…</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tab_followers">Followers</string>
+    <string name="tab_following">Following</string>
+    <string name="tab_text_1">Followers</string>
+    <string name="tab_text_2">Following</string>
+    <string name="splash_text">Supported by Dicoding</string>
+    <string name="menu_launch">launch</string>
+</resources>

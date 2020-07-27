@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<item
+    android:id="@+id/search"
+    android:icon="@drawable/search_icon"
+    android:title="@string/search"
+    app:actionViewClass="androidx.appcompat.widget.SearchView"
+    app:showAsAction="collapseActionView|always" />
+
+<!--<group android:menuCategory="container">-->
+<!--    <item android:id="@+id/menu1"-->
+<!--        android:title="@string/menu_1"-->
+<!--        android:icon = "@drawable/ic_baseline_language_24"-->
+<!--        app:showAsAction="always" />-->
+<!--    <item android:id="@+id/menu2"-->
+<!--        android:title="@string/menu_2"-->
+<!--        android:icon = "@drawable/ic_baseline_language_24" />-->
+<!--</group>-->
+
+    <item
+        android:id="@+id/menu_about"
+        android:icon="@drawable/about_icon"
+        app:showAsAction="ifRoom"
+        android:title="About">
+    </item>
+
+</menu>
