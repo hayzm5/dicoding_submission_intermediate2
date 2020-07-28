@@ -11,11 +11,7 @@ import com.example.githubapidicoding.RecyclerViewClickListener
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_row_githubuser.view.*
 
-class UserAdapter (
-
-//    private val listener: (User) -> Unit
-
-): RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
+class UserAdapter (): RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
     private val mData = ArrayList<User>()
 

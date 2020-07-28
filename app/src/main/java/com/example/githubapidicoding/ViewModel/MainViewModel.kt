@@ -16,49 +16,40 @@ class MainViewModel : ViewModel() {
     val listUsers = MutableLiveData<ArrayList<User>>()
 
     fun setUser(queryUser: String) {
+        try {
+            val client = AsyncHttpClient()
 
-        val client = AsyncHttpClient()
+            val listItems = ArrayList<User>()
+//        val userUrl: MutableList<String> = ArrayList()
 
-        val listItems = ArrayList<User>()
-        val userUrl: MutableList<String> = ArrayList()
+            val searchUrl = "https://api.github.com/search/users?q=$queryUser"
 
-        val searchUrl = "https://api.github.com/search/users?q=$queryUser"
+            client.addHeader("Authorization", "token b3b19438e86e9cb535196361874f8153ca90fdd1")
+            client.addHeader("User-Agent", "request")
 
-        client.addHeader("Authorization", "token b3b19438e86e9cb535196361874f8153ca90fdd1")
-        client.addHeader("User-Agent", "request")
+            client.get(searchUrl, object : AsyncHttpResponseHandler() {
+                override fun onSuccess(
+                    statusCode: Int,
+                    headers: Array<Header>,
+                    responseBody: ByteArray
+                ) {
+                    val result = String(responseBody)
+                    Log.d(MainActivity.TAG + " First Layer", result)
 
-        client.get(searchUrl, object : AsyncHttpResponseHandler() {
-            override fun onSuccess(
-                statusCode: Int,
-                headers: Array<Header>,
-                responseBody: ByteArray
-            ) {
-                val result = String(responseBody)
-                Log.d(MainActivity.TAG + " First Layer", result)
-
-                try {
                     val responseObject = JSONObject(result)
                     val items = responseObject.getJSONArray("items")
 
                     for (i in 0 until items.length()) {
                         val item = items.getJSONObject(i)
-                        userUrl.add(item.getString("url"))
-                    }
-                } catch (e: Exception) {
-                    Log.d("Exception", e.message.toString())
-                }
+                        client.get(item.getString("url"), object : AsyncHttpResponseHandler() {
+                            override fun onSuccess(
+                                statusCode: Int,
+                                headers: Array<Header>,
+                                responseBody: ByteArray
+                            ) {
+                                val resultDetail = String(responseBody)
+                                Log.d(MainActivity.TAG + " Second Layer", resultDetail)
 
-                for (i in 0 until userUrl.lastIndex + 1) {
-                    client.get(userUrl[i], object : AsyncHttpResponseHandler() {
-                        override fun onSuccess(
-                            statusCode: Int,
-                            headers: Array<Header>,
-                            responseBody: ByteArray
-                        ) {
-                            val resultDetail = String(responseBody)
-                            Log.d(MainActivity.TAG + " Second Layer", resultDetail)
-
-                            try {
                                 val responseObject = JSONObject(resultDetail)
 
                                 val user =
@@ -73,38 +64,38 @@ class MainViewModel : ViewModel() {
                                 user.usrFollowing = responseObject.getInt("following")
                                 listItems.add(user)
 
-                            } catch (e: Exception) {
-                                Log.d("Exception", e.message.toString())
+                                listUsers.postValue(listItems)
                             }
 
-                        listUsers.postValue(listItems)
-                        }
+                            override fun onFailure(
+                                statusCode: Int,
+                                headers: Array<Header>,
+                                responseBody: ByteArray,
+                                error: Throwable
+                            ) {
+                                Log.d("onFailure detail", error.message.toString())
+                            }
 
-                        override fun onFailure(
-                            statusCode: Int,
-                            headers: Array<Header>,
-                            responseBody: ByteArray,
-                            error: Throwable
-                        ) {
-                            Log.d("onFailure", error.message.toString())
-                        }
+                        })
 
-                    })
+                    }
 
                 }
 
-            }
+                override fun onFailure(
+                    statusCode: Int,
+                    headers: Array<Header>,
+                    responseBody: ByteArray,
+                    error: Throwable
+                ) {
+                    Log.d("onFailure header", error.message.toString())
+                }
 
-            override fun onFailure(
-                statusCode: Int,
-                headers: Array<Header>,
-                responseBody: ByteArray,
-                error: Throwable
-            ) {
-                Log.d("onFailure", error.message.toString())
-            }
+            })
 
-        })
+        } catch (e: Exception) {
+            Log.d("Exception", e.message.toString())
+        }
     }
 
     fun getUser(): LiveData<ArrayList<User>> {

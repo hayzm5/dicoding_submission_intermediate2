@@ -16,21 +16,25 @@ class FollowingViewModel : ViewModel() {
     val listUsers = MutableLiveData<ArrayList<User>>()
 
     fun setUser(queryUser: String) {
+        try {
+            val client = AsyncHttpClient()
+            val listItems = ArrayList<User>()
 
-        val client = AsyncHttpClient()
-        val listItems = ArrayList<User>()
+            val url = "https://api.github.com/users/$queryUser/following"
 
-        val url = "https://api.github.com/users/$queryUser/following"
+            client.addHeader("Authorization", "token b3b19438e86e9cb535196361874f8153ca90fdd1")
+            client.addHeader("User-Agent", "request")
 
-        client.addHeader("Authorization", "token b3b19438e86e9cb535196361874f8153ca90fdd1")
-        client.addHeader("User-Agent", "request")
+            client.get(url, object : AsyncHttpResponseHandler() {
+                override fun onSuccess(
+                    statusCode: Int,
+                    headers: Array<Header>,
+                    responseBody: ByteArray
+                ) {
+                    val result = String(responseBody)
+                    Log.d(MainActivity.TAG + " detail", result)
 
-        client.get(url, object : AsyncHttpResponseHandler() {
-            override fun onSuccess(statusCode: Int, headers: Array<Header>, responseBody: ByteArray) {
-                val result = String(responseBody)
-                Log.d(MainActivity.TAG + " detail", result)
 
-                try{
                     val jsonArray = JSONArray(result)
 
                     for (i in 0 until jsonArray.length()) {
@@ -42,19 +46,20 @@ class FollowingViewModel : ViewModel() {
                         listItems.add(user)
                     }
                     listUsers.postValue(listItems)
-
-                }
-                catch (e: Exception) {
-                    Log.d("Exception", e.message.toString())
                 }
 
-            }
-
-            override fun onFailure(statusCode: Int, headers: Array<Header>, responseBody: ByteArray, error: Throwable) {
-                Log.d("onFailure", error.message.toString())
-            }
-        })
-
+                override fun onFailure(
+                    statusCode: Int,
+                    headers: Array<Header>,
+                    responseBody: ByteArray,
+                    error: Throwable
+                ) {
+                    Log.d("onFailure", error.message.toString())
+                }
+            })
+        } catch (e: Exception) {
+            Log.d("Exception", e.message.toString())
+        }
     }
 
     fun getUser(): LiveData<ArrayList<User>> {
