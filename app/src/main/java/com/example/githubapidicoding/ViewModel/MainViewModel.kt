@@ -34,7 +34,7 @@ class MainViewModel : ViewModel() {
                 responseBody: ByteArray
             ) {
                 val result = String(responseBody)
-                Log.d(MainActivity.TAG + " Pertama", result)
+                Log.d(MainActivity.TAG + " First Layer", result)
 
                 try {
                     val responseObject = JSONObject(result)
@@ -56,7 +56,7 @@ class MainViewModel : ViewModel() {
                             responseBody: ByteArray
                         ) {
                             val resultDetail = String(responseBody)
-                            Log.d(MainActivity.TAG + " Kedua", resultDetail)
+                            Log.d(MainActivity.TAG + " Second Layer", resultDetail)
 
                             try {
                                 val responseObject = JSONObject(resultDetail)
