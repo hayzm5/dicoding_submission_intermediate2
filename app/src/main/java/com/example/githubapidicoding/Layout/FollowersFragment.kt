@@ -11,8 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.githubapidicoding.Adapter.FollowersAdapter
 import com.example.githubapidicoding.R
 import com.example.githubapidicoding.ViewModel.FollowersViewModel
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_followers.*
-
+import kotlinx.android.synthetic.main.fragment_followers.progressBar
 
 
 class FollowersFragment : Fragment() {
@@ -68,15 +69,25 @@ class FollowersFragment : Fragment() {
 
             val username = arguments?.getString(ARG_USERNAME)
             if (username != null) {
+                showLoading(true)
                 followersViewModel.setUser(username)
             }
 
             followersViewModel.getUser().observe(activity!!, Observer { user ->
                 if (user != null) {
                     followersAdapter.setData(user)
+                    showLoading(false)
                 }
             })
 
+        }
+    }
+
+    private fun showLoading(state: Boolean) {
+        if (state) {
+            progressBar.visibility = View.VISIBLE
+        } else {
+            progressBar.visibility = View.GONE
         }
     }
 
