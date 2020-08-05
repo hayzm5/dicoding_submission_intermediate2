@@ -1,7 +1,4 @@
-package com.example.githubapidicoding.Model
-
-import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+package com.example.githubapidicoding.model
 
 
 data class User(

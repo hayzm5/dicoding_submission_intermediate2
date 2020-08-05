@@ -11,16 +11,16 @@
         android:roundIcon="@mipmap/github_logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Layout.AboutActivity"></activity>
-        <activity android:name=".Layout.SplashScreen">
+        <activity android:name=".layout.AboutActivity"></activity>
+        <activity android:name=".layout.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Layout.DetailActivity" />
-        <activity android:name=".Layout.MainActivity"/>
+        <activity android:name=".layout.DetailActivity" />
+        <activity android:name=".layout.MainActivity"/>
     </application>
 
 </manifest>

@@ -5,42 +5,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Layout.MainActivity">
+    tools:context=".layout.MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="190dp"
+        android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:padding="2dp">
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/detail_avatar_parent"
+            android:id="@+id/detailAvatarParent"
             android:layout_marginTop="15dp"
-            android:layout_marginLeft="-15dp"
+            android:layout_marginStart="-15dp"
+            android:layout_marginBottom="15dp"
             android:elevation="10dp"
             app:cardCornerRadius="20dp">
 
             <ImageView
-                android:id="@+id/detail_avatar"
+                android:id="@+id/detailAvatar"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:background="@color/colorPrimary"/>
 
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:id="@+id/detail_labels_parent"
-            android:layout_toRightOf="@id/detail_avatar_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/detailLabelsParent"
+            android:layout_toEndOf="@id/detailAvatarParent"
             android:layout_marginTop="15dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="15dp"
             android:elevation="10dp"
             app:cardCornerRadius="20dp"
-            android:layout_marginRight="-20dp">
+            android:layout_marginEnd="-20dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -48,49 +50,49 @@
                 android:background="@color/white">
 
             <TextView
-                android:id="@+id/detail_name"
+                android:id="@+id/detailName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="20dp"
                 android:text="@string/name"
                 android:textSize="20sp"
                 android:textColor="@color/black"/>
 
             <TextView
-                android:id="@+id/detail_username"
+                android:id="@+id/detailUsername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/detail_name"
+                android:layout_below="@id/detailName"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="15dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="20dp"
                 android:text="@string/username"
                 android:textSize="20sp"
                 android:textColor="@color/black"/>
 
             <TextView
-                android:id="@+id/detail_company"
+                android:id="@+id/detailCompany"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/detail_username"
+                android:layout_below="@id/detailUsername"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="15dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="20dp"
                 android:text="@string/company"
                 android:textSize="20sp"
                 android:textColor="@color/black"/>
 
             <TextView
-                android:id="@+id/detail_location"
+                android:id="@+id/detailLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/detail_company"
+                android:layout_below="@id/detailCompany"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginStart="15dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="20dp"
                 android:text="@string/location"
                 android:textSize="20sp"
                 android:textColor="@color/black"/>

@@ -1,4 +1,4 @@
-package com.example.githubapidicoding.Layout
+package com.example.githubapidicoding.layout
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

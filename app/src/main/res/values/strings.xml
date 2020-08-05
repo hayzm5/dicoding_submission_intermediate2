@@ -20,4 +20,6 @@
     <string name="splash_text">Supported by Dicoding</string>
     <string name="menu_launch">launch</string>
     <string name="main_instruction">Please search \nGithub user above</string>
+    <string name="author_name">Hayra Mudji Saputro</string>
+    <string name="author_email">hayra.saputro@gmail.com</string>
 </resources>

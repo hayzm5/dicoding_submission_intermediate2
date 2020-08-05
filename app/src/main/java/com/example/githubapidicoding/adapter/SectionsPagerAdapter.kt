@@ -1,4 +1,4 @@
-package com.example.githubapidicoding.Adapter
+package com.example.githubapidicoding.adapter
 
 import android.content.Context
 import androidx.annotation.Nullable
@@ -6,8 +6,8 @@ import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.example.githubapidicoding.Layout.FollowersFragment
-import com.example.githubapidicoding.Layout.FollowingFragment
+import com.example.githubapidicoding.layout.FollowersFragment
+import com.example.githubapidicoding.layout.FollowingFragment
 import com.example.githubapidicoding.R
 
 class SectionsPagerAdapter(private val mContext: Context, fm: FragmentManager) :

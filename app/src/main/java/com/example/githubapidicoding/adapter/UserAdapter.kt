@@ -1,11 +1,11 @@
-package com.example.githubapidicoding.Adapter
+package com.example.githubapidicoding.adapter
 
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.githubapidicoding.Model.User
+import com.example.githubapidicoding.model.User
 import com.example.githubapidicoding.R
 import com.example.githubapidicoding.RecyclerViewClickListener
 import com.squareup.picasso.Picasso
@@ -22,9 +22,9 @@ class UserAdapter (): RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
         fun bind(userItems: User) {
             with(itemView){
-                _rowName.text = userItems.usrUsername
-                Picasso.get().load(Uri.parse(userItems.usrAvatar)).into(_rowAvatar)
-                _rowCompany.text = userItems.usrCompany
+                rowName.text = userItems.usrUsername
+                Picasso.get().load(Uri.parse(userItems.usrAvatar)).into(rowAvatar)
+                rowCompany.text = userItems.usrCompany
             }
         }
 

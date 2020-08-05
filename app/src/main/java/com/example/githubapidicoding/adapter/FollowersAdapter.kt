@@ -1,11 +1,11 @@
-package com.example.githubapidicoding.Adapter
+package com.example.githubapidicoding.adapter
 
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.githubapidicoding.Model.User
+import com.example.githubapidicoding.model.User
 import com.example.githubapidicoding.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_row_followers.view.*

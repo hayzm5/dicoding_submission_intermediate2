@@ -1,4 +1,4 @@
-package com.example.githubapidicoding.Layout
+package com.example.githubapidicoding.layout
 
 import android.content.Intent
 import android.net.Uri
@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import com.example.githubapidicoding.Adapter.SectionsPagerAdapter
+import com.example.githubapidicoding.adapter.SectionsPagerAdapter
 import com.example.githubapidicoding.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail.*
@@ -24,11 +24,11 @@ class DetailActivity : AppCompatActivity() {
         val followers = intent.getIntExtra("followers", 0)
         val following = intent.getIntExtra("following", 0)
 
-        Picasso.get().load(Uri.parse(avatar)).into(detail_avatar)
-        detail_name.text = name
-        detail_username.text = username
-        detail_company.text = company
-        detail_location.text = location
+        Picasso.get().load(Uri.parse(avatar)).into(detailAvatar)
+        detailName.text = "Name: $name"
+        detailUsername.text = "Username: $username"
+        detailCompany.text = "Company: $company"
+        detailLocation.text = "Location: $location"
 
 //        Toast.makeText(applicationContext,username,Toast.LENGTH_LONG).show()
 
@@ -58,7 +58,7 @@ class DetailActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.menu_launch -> {
-                val usernameGithub = detail_username.text
+                val usernameGithub = detailUsername.text
                 val urlGithub = "http://github.com/"
                 val implicit =
                     Intent(Intent.ACTION_VIEW, Uri.parse(urlGithub + usernameGithub))

@@ -1,4 +1,4 @@
-package com.example.githubapidicoding.Layout
+package com.example.githubapidicoding.layout
 
 import android.app.SearchManager
 import android.content.Context
@@ -12,11 +12,11 @@ import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.githubapidicoding.Adapter.UserAdapter
-import com.example.githubapidicoding.Model.User
+import com.example.githubapidicoding.adapter.UserAdapter
+import com.example.githubapidicoding.model.User
 import com.example.githubapidicoding.R
 import com.example.githubapidicoding.RecyclerViewClickListener
-import com.example.githubapidicoding.ViewModel.MainViewModel
+import com.example.githubapidicoding.viewModel.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(),

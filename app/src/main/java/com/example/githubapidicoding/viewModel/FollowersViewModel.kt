@@ -1,11 +1,11 @@
-package com.example.githubapidicoding.ViewModel
+package com.example.githubapidicoding.viewModel
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.githubapidicoding.Layout.MainActivity
-import com.example.githubapidicoding.Model.User
+import com.example.githubapidicoding.layout.MainActivity
+import com.example.githubapidicoding.model.User
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
 import cz.msebera.android.httpclient.Header

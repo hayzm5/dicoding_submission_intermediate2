@@ -7,7 +7,7 @@
 
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/_rowAvatar"
+        android:id="@+id/rowAvatar"
         android:layout_width="110dp"
         android:layout_height="116dp"
         android:layout_centerVertical="true"
@@ -22,7 +22,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/_rowName"
+        android:id="@+id/rowName"
         android:layout_width="215dp"
         android:layout_height="34dp"
         android:layout_marginStart="32dp"
@@ -36,12 +36,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toEndOf="@+id/_rowAvatar"
+        app:layout_constraintStart_toEndOf="@+id/rowAvatar"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.206" />
 
     <TextView
-        android:id="@+id/_rowCompany"
+        android:id="@+id/rowCompany"
         android:layout_width="214dp"
         android:layout_height="44dp"
         android:layout_marginStart="32dp"
@@ -55,7 +55,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.571"
-        app:layout_constraintStart_toEndOf="@+id/_rowAvatar"
+        app:layout_constraintStart_toEndOf="@+id/rowAvatar"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.78" />
 
