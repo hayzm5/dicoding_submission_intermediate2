@@ -22,4 +22,5 @@
     <string name="main_instruction">Please search \nGithub user above</string>
     <string name="author_name">Hayra Mudji Saputro</string>
     <string name="author_email">hayra.saputro@gmail.com</string>
+    <string name="menu_favorite">favorite</string>
 </resources>

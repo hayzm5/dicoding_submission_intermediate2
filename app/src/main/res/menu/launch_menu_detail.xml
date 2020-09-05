@@ -2,9 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <item android:id="@+id/menu_favorite"
+        android:title="@string/menu_favorite"
+        android:icon = "@drawable/whitestar_icon"
+        app:showAsAction="ifRoom"/>
+
     <item android:id="@+id/menu_launch"
         android:title="@string/menu_launch"
         android:icon = "@drawable/nearme_icon"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
 
 </menu>
